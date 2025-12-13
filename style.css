@@ -404,3 +404,23 @@ select:focus {
     font-size: 15px;
     margin-top: 5px;
 }
+
+.social-media i {
+  font-size: 25px;
+  margin: 0 10px;
+  color: #9c9b9b;
+  transition: color 0.3s, transform 0.3s;
+  align-items: center;
+  justify-content: center;
+  padding:18px;
+  text-align:center;
+}
+
+.social-media i:hover {
+  color: #f06; /* change color on hover */
+  transform: scale(1.2);
+}
+
+.social-media a {
+  text-decoration: none;
+}
