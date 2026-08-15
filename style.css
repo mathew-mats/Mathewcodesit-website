@@ -21,7 +21,7 @@
 }
 
 /* ============================================================ */
-/* ===== RESET & BASE ===== */
+/* ===== RESET & BASE - FIXED ===== */
 /* ============================================================ */
 * {
     margin: 0;
@@ -33,6 +33,8 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -40,6 +42,9 @@ body {
     color: var(--text-white);
     line-height: 1.7;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
 }
 
 a {
@@ -50,6 +55,7 @@ a {
 img {
     max-width: 100%;
     display: block;
+    height: auto;
 }
 
 /* ============================================================ */
@@ -86,12 +92,14 @@ img {
 .header {
     position: fixed;
     width: 100%;
+    max-width: 100%;
     top: 0;
     left: 0;
+    right: 0;
     background: rgba(13, 13, 13, 0.92);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    padding: 12px 40px;
+    padding: 12px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -108,11 +116,12 @@ img {
 .logo {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .logo-img {
-    /* height: 100px; */
-    width: 100px;
+    height: 50px;
+    width: auto;
     display: block;
     transition: var(--transition);
 }
@@ -135,6 +144,7 @@ img {
     transition: var(--transition);
     position: relative;
     letter-spacing: 0.3px;
+    white-space: nowrap;
 }
 
 .navbar a::after {
@@ -166,6 +176,9 @@ img {
     cursor: pointer;
     color: var(--primary);
     transition: var(--transition);
+    background: none;
+    border: none;
+    padding: 4px;
 }
 
 #menu-icon:hover {
@@ -173,15 +186,17 @@ img {
 }
 
 /* ============================================================ */
-/* ===== HOME / HERO ===== */
+/* ===== HOME / HERO - FIXED ===== */
 /* ============================================================ */
 .home {
-    padding: 140px 8% 80px;
+    padding: 140px 5% 80px;
     display: flex;
     gap: 60px;
     align-items: center;
     min-height: 100vh;
     position: relative;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .home::before {
@@ -200,6 +215,7 @@ img {
     flex: 1;
     position: relative;
     z-index: 1;
+    min-width: 0;
 }
 
 .badge {
@@ -222,6 +238,7 @@ img {
     color: var(--primary);
     animation: float 3s ease-in-out infinite;
     line-height: 1.1;
+    word-wrap: break-word;
 }
 
 @keyframes float {
@@ -234,6 +251,7 @@ img {
     color: var(--primary-light);
     margin: 8px 0 12px;
     font-weight: 600;
+    word-wrap: break-word;
 }
 
 .highlight {
@@ -253,6 +271,7 @@ img {
     margin: 12px 0 16px;
     font-weight: 500;
     border: 1px solid rgba(0, 122, 204, 0.1);
+    max-width: 100%;
 }
 
 .tech-stack-badge span {
@@ -346,7 +365,7 @@ img {
     font-size: 14px;
 }
 
-/* ===== HOME IMAGE ===== */
+/* ===== HOME IMAGE - FIXED ===== */
 .home-img {
     flex: 0 0 380px;
     position: relative;
@@ -362,6 +381,7 @@ img {
     transition: var(--transition);
     width: 380px;
     height: 380px;
+    max-width: 100%;
 }
 
 .profile-wrapper:hover {
@@ -408,6 +428,7 @@ img {
     color: var(--text-gray);
     box-shadow: var(--shadow);
     animation: float-badge 3s ease-in-out infinite;
+    white-space: nowrap;
 }
 
 .floating-badge i {
@@ -443,6 +464,7 @@ img {
     text-align: center;
     max-width: 700px;
     margin: 0 auto 50px;
+    padding: 0 10px;
 }
 
 .section-title {
@@ -451,6 +473,7 @@ img {
     color: var(--primary);
     position: relative;
     display: inline-block;
+    word-wrap: break-word;
 }
 
 .section-title::after {
@@ -475,8 +498,10 @@ img {
 /* ===== SKILLS ===== */
 /* ============================================================ */
 .skills-section {
-    padding: 80px 8%;
+    padding: 80px 5%;
     background: var(--bg-dark);
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .skills-grid {
@@ -600,8 +625,10 @@ img {
 /* ===== PROJECTS ===== */
 /* ============================================================ */
 .projects-section {
-    padding: 80px 8%;
+    padding: 80px 5%;
     background: #0a0a0a;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .projects-container {
@@ -692,6 +719,7 @@ img {
     font-size: 18px;
     color: var(--primary-light);
     margin-bottom: 4px;
+    word-wrap: break-word;
 }
 
 .project-tags {
@@ -717,14 +745,13 @@ img {
 }
 
 .project-role {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 6px;
     font-size: 13px;
     color: var(--text-muted);
     margin-top: 10px;
     font-style: italic;
-    display: flex;
-    align-items: center;
-    gap: 6px;
 }
 
 .project-role i {
@@ -735,8 +762,10 @@ img {
 /* ===== SERVICES ===== */
 /* ============================================================ */
 .services-section {
-    padding: 80px 8%;
+    padding: 80px 5%;
     background: var(--bg-dark);
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .services-grid {
@@ -880,8 +909,10 @@ img {
 /* ===== CONTACT ===== */
 /* ============================================================ */
 .contact-section {
-    padding: 80px 8% 60px;
+    padding: 80px 5% 60px;
     background: #0a0a0a;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .contact-wrapper {
@@ -921,6 +952,7 @@ img {
     font-size: 15px;
     transition: var(--transition);
     outline: none;
+    max-width: 100%;
 }
 
 .contact-form input::placeholder,
@@ -939,6 +971,7 @@ img {
 .contact-form textarea {
     resize: vertical;
     min-height: 120px;
+    max-width: 100%;
 }
 
 .hire-btn {
@@ -1018,11 +1051,13 @@ img {
     font-size: 16px;
     width: 20px;
     margin-top: 3px;
+    flex-shrink: 0;
 }
 
 .contact-detail div {
     display: flex;
     flex-direction: column;
+    min-width: 0;
 }
 
 .contact-detail span {
@@ -1038,6 +1073,7 @@ img {
     color: var(--text-gray);
     font-size: 14px;
     transition: var(--transition);
+    word-wrap: break-word;
 }
 
 .contact-detail a:hover {
@@ -1048,6 +1084,7 @@ img {
     display: flex;
     gap: 12px;
     margin: 20px 0 18px;
+    flex-wrap: wrap;
 }
 
 .contact-social a {
@@ -1062,6 +1099,7 @@ img {
     font-size: 18px;
     transition: var(--transition);
     border: 1px solid transparent;
+    flex-shrink: 0;
 }
 
 .contact-social a:hover {
@@ -1138,7 +1176,9 @@ img {
 .site-footer {
     background: #0a0a0a;
     border-top: 1px solid rgba(255, 255, 255, 0.04);
-    padding: 40px 8% 24px;
+    padding: 40px 5% 24px;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .footer-content {
@@ -1158,7 +1198,8 @@ img {
 }
 
 .footer-logo .logo-img {
-    height: 100px;
+    height: 50px;
+    width: auto;
 }
 
 .footer-tagline {
@@ -1185,6 +1226,7 @@ img {
 .footer-social {
     display: flex;
     gap: 12px;
+    flex-wrap: wrap;
 }
 
 .footer-social a {
@@ -1228,7 +1270,7 @@ img {
 }
 
 /* ============================================================ */
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE - FIXED ===== */
 /* ============================================================ */
 
 @media (max-width: 1200px) {
@@ -1256,11 +1298,14 @@ img {
         text-align: center;
         padding-top: 120px;
         gap: 40px;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     .home-content p {
         margin-left: auto;
         margin-right: auto;
+        max-width: 100%;
     }
 
     .btn-box {
@@ -1277,6 +1322,9 @@ img {
 
     .home-img {
         flex: 0 0 auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .profile-wrapper {
@@ -1301,11 +1349,24 @@ img {
     .footer-links {
         justify-content: center;
     }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 768px) {
     .header {
-        padding: 10px 20px;
+        padding: 10px 4%;
     }
 
     #menu-icon {
@@ -1317,16 +1378,17 @@ img {
         position: absolute;
         top: 100%;
         right: 0;
+        left: 0;
         background: var(--bg-card);
-        width: 240px;
+        width: 100%;
         display: none;
         flex-direction: column;
         padding: 8px 0;
-        border-left: 1px solid var(--border-color);
+        border-top: 1px solid var(--border-color);
         border-bottom: 1px solid var(--border-color);
-        border-radius: 0 0 0 var(--radius);
         animation: slideDown 0.3s ease;
         gap: 0;
+        border-radius: 0;
     }
 
     .navbar.active {
@@ -1334,9 +1396,11 @@ img {
     }
 
     .navbar a {
-        padding: 12px 24px;
+        padding: 14px 24px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.04);
         font-size: 15px;
+        text-align: center;
+        white-space: normal;
     }
 
     .navbar a::after {
@@ -1347,6 +1411,18 @@ img {
         background: rgba(0, 122, 204, 0.05);
     }
 
+    .logo-img {
+        height: 40px;
+    }
+
+    .home {
+        padding-top: 90px;
+        padding-left: 4%;
+        padding-right: 4%;
+        gap: 30px;
+        min-height: auto;
+    }
+
     .float-text {
         font-size: 34px;
     }
@@ -1355,62 +1431,53 @@ img {
         font-size: 18px;
     }
 
+    .badge {
+        font-size: 10px;
+        padding: 3px 12px;
+    }
+
     .tech-stack-badge {
         font-size: 12px;
         padding: 8px 14px;
-        flex-wrap: wrap;
         justify-content: center;
     }
 
-    .section-title {
-        font-size: 28px;
+    .tech-stack-badge span {
+        font-size: 12px;
     }
 
-    .skills-grid,
-    .services-grid,
-    .projects-container {
-        grid-template-columns: 1fr;
+    .home-content p {
+        font-size: 15px;
     }
 
-    .why-grid {
-        grid-template-columns: 1fr;
+    .tagline {
+        font-size: 15px !important;
+        padding: 6px 12px;
     }
 
-    .why-me {
-        padding: 24px 18px;
-    }
-
-    .contact-info {
-        padding: 24px 18px;
-    }
-
-    .contact-detail {
-        padding: 10px 0;
-    }
-
-    .footer-bottom {
+    .btn-box {
         flex-direction: column;
-        text-align: center;
+        width: 100%;
+        gap: 10px;
     }
 
-    .logo-img {
-        height: 50px;
-    }
-}
-
-@media (max-width: 480px) {
-    .home {
-        padding-top: 100px;
-        padding-left: 5%;
-        padding-right: 5%;
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 20px;
+        font-size: 14px;
     }
 
-    .float-text {
-        font-size: 28px;
+    .trust-badges {
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        margin-top: 20px;
     }
 
-    .home-content h3 {
-        font-size: 16px;
+    .trust-badges span {
+        font-size: 12px;
     }
 
     .profile-wrapper {
@@ -1418,23 +1485,188 @@ img {
         height: 220px;
     }
 
-    .btn-primary,
-    .btn-secondary {
-        padding: 10px 20px;
+    .status-dot {
+        width: 14px;
+        height: 14px;
+        bottom: 12px;
+        right: 12px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .section-title::after {
+        width: 40px;
+    }
+
+    .section-subtitle {
+        font-size: 15px;
+    }
+
+    .skills-section,
+    .projects-section,
+    .services-section,
+    .contact-section {
+        padding: 50px 4%;
+    }
+
+    .section-header {
+        margin-bottom: 30px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .skill-category {
+        padding: 24px 18px;
+    }
+
+    .skill-category h3 {
+        font-size: 17px;
+    }
+
+    .skill-category p {
+        font-size: 14px;
+    }
+
+    .skill-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .skill-icon i {
+        font-size: 22px;
+    }
+
+    .skill-tags span {
+        font-size: 10px;
+        padding: 2px 10px;
+    }
+
+    .skills-note {
+        padding: 16px 18px;
+        margin-top: 30px;
+    }
+
+    .skills-note p {
         font-size: 13px;
-        width: 100%;
-        justify-content: center;
     }
 
-    .btn-box {
-        flex-direction: column;
-        width: 100%;
+    .projects-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
-    .trust-badges {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
+    .project-image {
+        height: 180px;
+    }
+
+    .project-info {
+        padding: 16px 18px;
+    }
+
+    .project-info h3 {
+        font-size: 16px;
+    }
+
+    .project-info p {
+        font-size: 13px;
+    }
+
+    .project-tags span {
+        font-size: 10px;
+        padding: 2px 10px;
+    }
+
+    .project-role {
+        font-size: 12px;
+    }
+
+    .project-overlay {
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    .project-link {
+        padding: 8px 18px;
+        font-size: 12px;
+        transform: none;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .service-card {
+        padding: 24px 18px;
+    }
+
+    .service-card h3 {
+        font-size: 17px;
+    }
+
+    .service-card p {
+        font-size: 13px;
+    }
+
+    .service-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .service-icon i {
+        font-size: 24px;
+    }
+
+    .service-features li {
+        font-size: 12px;
+    }
+
+    .why-me {
+        padding: 20px 16px;
+        margin-top: 30px;
+    }
+
+    .why-me h3 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .why-item {
+        padding: 10px 12px;
+    }
+
+    .why-item i {
+        font-size: 16px;
+    }
+
+    .why-item h4 {
+        font-size: 14px;
+    }
+
+    .why-item p {
+        font-size: 12px;
+    }
+
+    .contact-wrapper {
+        gap: 24px;
+    }
+
+    .contact-form .form-group {
+        margin-bottom: 14px;
+    }
+
+    .contact-form label {
+        font-size: 13px;
     }
 
     .contact-form input,
@@ -1444,19 +1676,252 @@ img {
         font-size: 14px;
     }
 
+    .contact-form textarea {
+        min-height: 100px;
+    }
+
     .hire-btn {
         font-size: 14px;
         padding: 12px;
     }
 
+    .contact-info {
+        padding: 20px 16px;
+    }
+
+    .contact-info h3 {
+        font-size: 18px;
+    }
+
+    .contact-info > p {
+        font-size: 13px;
+    }
+
+    .contact-detail {
+        padding: 10px 0;
+    }
+
+    .contact-detail i {
+        font-size: 14px;
+        width: 18px;
+    }
+
+    .contact-detail a,
+    .contact-detail div span:last-child {
+        font-size: 13px;
+    }
+
+    .contact-detail span {
+        font-size: 10px;
+    }
+
+    .contact-social {
+        gap: 10px;
+        margin: 16px 0 14px;
+    }
+
     .contact-social a {
         width: 38px;
         height: 38px;
+        font-size: 15px;
+    }
+
+    .whatsapp-btn {
+        font-size: 13px;
+        padding: 10px 18px;
+    }
+
+    .success-message {
+        padding: 18px 16px;
+    }
+
+    .success-message strong {
         font-size: 16px;
     }
 
+    .success-message p {
+        font-size: 13px;
+    }
+
+    .site-footer {
+        padding: 30px 4% 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
     .footer-links {
-        gap: 14px;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .footer-links a {
+        font-size: 13px;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-social a {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+        padding-top: 16px;
+    }
+
+    .footer-bottom small {
+        font-size: 12px;
+    }
+
+    .footer-tagline {
+        font-size: 12px;
+    }
+
+    .footer-logo .logo-img {
+        height: 40px;
+    }
+
+    .floating-badge {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .home {
+        padding-top: 80px;
+        padding-left: 3%;
+        padding-right: 3%;
+        gap: 20px;
+    }
+
+    .float-text {
+        font-size: 28px;
+    }
+
+    .home-content h3 {
+        font-size: 16px;
+    }
+
+    .tech-stack-badge {
+        font-size: 10px;
+        padding: 6px 10px;
+        gap: 4px;
+    }
+
+    .tech-stack-badge span {
+        font-size: 10px;
+    }
+
+    .tagline {
+        font-size: 13px !important;
+        padding: 4px 10px;
+    }
+
+    .profile-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+
+    .status-dot {
+        width: 12px;
+        height: 12px;
+        bottom: 8px;
+        right: 8px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .section-subtitle {
+        font-size: 13px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        font-size: 13px;
+        padding: 10px 16px;
+    }
+
+    .skills-section,
+    .projects-section,
+    .services-section,
+    .contact-section {
+        padding: 40px 3%;
+    }
+
+    .project-image {
+        height: 150px;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+
+    .hire-btn {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .contact-social a {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .logo-img {
+        height: 34px;
+    }
+
+    .footer-logo .logo-img {
+        height: 34px;
+    }
+}
+
+@media (max-width: 360px) {
+    .float-text {
+        font-size: 22px;
+    }
+
+    .profile-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+
+    .tech-stack-badge {
+        font-size: 9px;
+        padding: 4px 8px;
+    }
+
+    .tech-stack-badge span {
+        font-size: 9px;
+    }
+
+    .navbar a {
+        font-size: 13px;
+        padding: 10px 16px;
+    }
+
+    .contact-detail a,
+    .contact-detail div span:last-child {
+        font-size: 12px;
+    }
+
+    .section-title {
+        font-size: 20px;
     }
 }
 
@@ -1504,4 +1969,32 @@ select option:hover {
 .why-item.revealed {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ============================================================ */
+/* ===== CONTAINER UTILITY ===== */
+/* ============================================================ */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ============================================================ */
+/* ===== IMAGE FIX ===== */
+/* ============================================================ */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ============================================================ */
+/* ===== TABLE FIX ===== */
+/* ============================================================ */
+table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    display: block;
 }
