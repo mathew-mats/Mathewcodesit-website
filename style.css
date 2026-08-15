@@ -120,7 +120,7 @@ img {
 }
 
 .logo-img {
-    height: 60px;
+    height: 80px;
     width: auto;
     display: block;
     transition: var(--transition);
@@ -1209,7 +1209,7 @@ img {
 }
 
 .footer-logo .logo-img {
-    height: 45px;
+    height: 80px;
     width: auto;
     display: block;
 }
