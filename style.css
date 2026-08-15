@@ -21,7 +21,7 @@
 }
 
 /* ============================================================ */
-/* ===== RESET & BASE - FIXED ===== */
+/* ===== RESET & BASE ===== */
 /* ============================================================ */
 * {
     margin: 0;
@@ -120,7 +120,7 @@ img {
 }
 
 .logo-img {
-    height: 50px;
+    height: 60px;
     width: auto;
     display: block;
     transition: var(--transition);
@@ -186,7 +186,7 @@ img {
 }
 
 /* ============================================================ */
-/* ===== HOME / HERO - FIXED ===== */
+/* ===== HOME / HERO ===== */
 /* ============================================================ */
 .home {
     padding: 140px 5% 80px;
@@ -365,7 +365,7 @@ img {
     font-size: 14px;
 }
 
-/* ===== HOME IMAGE - FIXED ===== */
+/* ===== HOME IMAGE ===== */
 .home-img {
     flex: 0 0 380px;
     position: relative;
@@ -1171,14 +1171,19 @@ img {
 }
 
 /* ============================================================ */
-/* ===== FOOTER ===== */
+/* ===== FOOTER - COMPLETELY FIXED ===== */
 /* ============================================================ */
 .site-footer {
     background: #0a0a0a;
     border-top: 1px solid rgba(255, 255, 255, 0.04);
-    padding: 40px 5% 24px;
+    padding: 30px 5% 15px;
+    width: 100%;
     max-width: 100%;
     overflow: hidden;
+    clear: both;
+    position: relative;
+    display: block;
+    margin-top: 0;
 }
 
 .footer-content {
@@ -1186,37 +1191,46 @@ img {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .footer-brand {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    flex-shrink: 0;
+}
+
+.footer-logo {
+    display: inline-block;
 }
 
 .footer-logo .logo-img {
-    height: 50px;
+    height: 45px;
     width: auto;
+    display: block;
 }
 
 .footer-tagline {
     color: var(--text-muted);
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .footer-links {
     display: flex;
-    gap: 24px;
+    gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .footer-links a {
     color: var(--text-gray);
-    font-size: 14px;
+    font-size: 13px;
     transition: var(--transition);
+    white-space: nowrap;
 }
 
 .footer-links a:hover {
@@ -1225,21 +1239,24 @@ img {
 
 .footer-social {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .footer-social a {
     color: var(--text-muted);
-    font-size: 18px;
+    font-size: 16px;
     transition: var(--transition);
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.03);
+    flex-shrink: 0;
 }
 
 .footer-social a:hover {
@@ -1250,19 +1267,20 @@ img {
 
 .footer-bottom {
     max-width: 1200px;
-    margin: 24px auto 0;
-    padding-top: 20px;
+    margin: 15px auto 0;
+    padding-top: 12px;
     border-top: 1px solid rgba(255, 255, 255, 0.04);
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 8px;
+    width: 100%;
 }
 
 .footer-bottom small {
     color: var(--text-muted);
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .footer-bottom i {
@@ -1270,7 +1288,7 @@ img {
 }
 
 /* ============================================================ */
-/* ===== RESPONSIVE - FIXED ===== */
+/* ===== RESPONSIVE ===== */
 /* ============================================================ */
 
 @media (max-width: 1200px) {
@@ -1328,8 +1346,8 @@ img {
     }
 
     .profile-wrapper {
-        width: 280px;
-        height: 280px;
+        width: 260px;
+        height: 260px;
     }
 
     .floating-badge {
@@ -1341,9 +1359,18 @@ img {
         gap: 30px;
     }
 
+    .why-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .footer-content {
         flex-direction: column;
         text-align: center;
+        gap: 14px;
+    }
+
+    .footer-brand {
+        align-items: center;
     }
 
     .footer-links {
@@ -1357,10 +1384,7 @@ img {
     .footer-bottom {
         flex-direction: column;
         text-align: center;
-    }
-
-    .why-grid {
-        grid-template-columns: 1fr 1fr;
+        gap: 4px;
     }
 }
 
@@ -1413,6 +1437,7 @@ img {
 
     .logo-img {
         height: 40px;
+        width: auto;
     }
 
     .home {
@@ -1424,7 +1449,7 @@ img {
     }
 
     .float-text {
-        font-size: 34px;
+        font-size: 32px;
     }
 
     .home-content h3 {
@@ -1437,21 +1462,21 @@ img {
     }
 
     .tech-stack-badge {
-        font-size: 12px;
+        font-size: 11px;
         padding: 8px 14px;
         justify-content: center;
     }
 
     .tech-stack-badge span {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .home-content p {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .tagline {
-        font-size: 15px !important;
+        font-size: 14px !important;
         padding: 6px 12px;
     }
 
@@ -1481,8 +1506,8 @@ img {
     }
 
     .profile-wrapper {
-        width: 220px;
-        height: 220px;
+        width: 200px;
+        height: 200px;
     }
 
     .status-dot {
@@ -1493,7 +1518,7 @@ img {
     }
 
     .section-title {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .section-title::after {
@@ -1501,7 +1526,7 @@ img {
     }
 
     .section-subtitle {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .skills-section,
@@ -1744,51 +1769,49 @@ img {
     }
 
     .site-footer {
-        padding: 30px 4% 20px;
+        padding: 20px 4% 12px;
     }
 
     .footer-content {
-        flex-direction: column;
-        gap: 16px;
-        text-align: center;
+        gap: 12px;
     }
 
     .footer-links {
-        justify-content: center;
-        gap: 16px;
+        gap: 12px;
     }
 
     .footer-links a {
-        font-size: 13px;
+        font-size: 12px;
+        white-space: normal;
     }
 
     .footer-social {
-        justify-content: center;
+        gap: 8px;
     }
 
     .footer-social a {
-        width: 36px;
-        height: 36px;
-        font-size: 16px;
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
     }
 
     .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-        gap: 8px;
-        padding-top: 16px;
+        gap: 4px;
+        padding-top: 10px;
+        margin-top: 12px;
     }
 
     .footer-bottom small {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .footer-tagline {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .footer-logo .logo-img {
-        height: 40px;
+        height: 35px;
+        width: auto;
     }
 
     .floating-badge {
@@ -1805,7 +1828,7 @@ img {
     }
 
     .float-text {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .home-content h3 {
@@ -1828,8 +1851,8 @@ img {
     }
 
     .profile-wrapper {
-        width: 180px;
-        height: 180px;
+        width: 160px;
+        height: 160px;
     }
 
     .status-dot {
@@ -1840,7 +1863,7 @@ img {
     }
 
     .section-title {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .section-subtitle {
@@ -1883,11 +1906,39 @@ img {
     }
 
     .logo-img {
-        height: 34px;
+        height: 35px;
+        width: auto;
     }
 
     .footer-logo .logo-img {
-        height: 34px;
+        height: 30px;
+        width: auto;
+    }
+
+    .footer-links {
+        gap: 8px;
+    }
+
+    .footer-links a {
+        font-size: 11px;
+    }
+
+    .footer-social a {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .footer-bottom small {
+        font-size: 10px;
+    }
+
+    .footer-tagline {
+        font-size: 10px;
+    }
+
+    .site-footer {
+        padding: 16px 3% 10px;
     }
 }
 
@@ -1897,8 +1948,8 @@ img {
     }
 
     .profile-wrapper {
-        width: 150px;
-        height: 150px;
+        width: 140px;
+        height: 140px;
     }
 
     .tech-stack-badge {
@@ -1922,6 +1973,28 @@ img {
 
     .section-title {
         font-size: 20px;
+    }
+
+    .logo-img {
+        height: 30px;
+        width: auto;
+    }
+
+    .footer-logo .logo-img {
+        height: 28px;
+        width: auto;
+    }
+
+    .footer-links a {
+        font-size: 10px;
+    }
+
+    .footer-bottom small {
+        font-size: 9px;
+    }
+
+    .site-footer {
+        padding: 12px 2% 8px;
     }
 }
 
@@ -1998,3 +2071,4 @@ table {
     overflow-x: auto;
     display: block;
 }
+
