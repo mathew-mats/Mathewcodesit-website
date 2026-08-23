@@ -1308,6 +1308,7 @@ img {
     .availability-badge {
         right: -20px;
     }
+    
 }
 
 @media (max-width: 992px) {
@@ -1386,6 +1387,10 @@ img {
         text-align: center;
         gap: 4px;
     }
+    .logo-img {
+        height: 60px;
+        width: auto;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1436,7 +1441,7 @@ img {
     }
 
     .logo-img {
-        height: 40px;
+        height: 60px;
         width: auto;
     }
 
@@ -1810,7 +1815,7 @@ img {
     }
 
     .footer-logo .logo-img {
-        height: 35px;
+        height: 60px;
         width: auto;
     }
 
@@ -1906,12 +1911,12 @@ img {
     }
 
     .logo-img {
-        height: 35px;
+        height: 50px;
         width: auto;
     }
 
     .footer-logo .logo-img {
-        height: 30px;
+        height: 50px;
         width: auto;
     }
 
@@ -1976,12 +1981,12 @@ img {
     }
 
     .logo-img {
-        height: 30px;
+        height: 50px;
         width: auto;
     }
 
     .footer-logo .logo-img {
-        height: 28px;
+        height: 50px;
         width: auto;
     }
 
